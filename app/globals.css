@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-feature-settings:
+    "liga" 1,
+    "calt" 1;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
+}
+
+a {
+  @apply text-brand-600 hover:text-brand-700 transition-colors;
+}
+
+.gradient-border {
+  position: relative;
+  isolation: isolate;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  z-index: -1;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 118, 110, 0.5),
+    rgba(59, 130, 246, 0.35),
+    rgba(236, 72, 153, 0.4)
+  );
+}
